@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Libro 1",
+    "description": "Esto es un libro",
+    "price": 12.0
+  },
+  {
+    "name": "Libro 2",
+    "description": "Esto es otro libro",
+    "price": 80.0
+  }
+]

@@ -1,14 +1,19 @@
 import express, { Application } from "express";
+import IndexRoutes from "./routes/index.routes";
 
 export class App {
   private app: Application;
-  private port: Application;
+  private readonly port: Application;
 
   constructor() {
     this.app = express();
 
     this.app.set("port", process.env.PORT || 5000);
     this.port = this.app.get("port");
+  }
+
+  routes() {
+    this.app.use(IndexRoutes);
   }
 
   async listen() {

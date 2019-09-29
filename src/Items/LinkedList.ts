@@ -1,8 +1,8 @@
 import { Nodo } from "./Nodo";
 
 class LinkedList<T> {
-  private head: Nodo<T> | null = null;
-  private tail: Nodo<T> | null = null;
+  public head: Nodo<T> | null = null;
+  public tail: Nodo<T> | null = null;
 
   pushFront(data: T): void {
     const node = new Nodo<T>(data);
@@ -19,7 +19,7 @@ class LinkedList<T> {
 
   printList(): void {
     let currentElement: Nodo<T> | null = this.head;
-    if (currentElement!.next == null) {
+    if (currentElement == null) {
       console.log("No hay artículos registrados");
     }
 

@@ -1,5 +1,6 @@
-## Unal Shop
+## UNShop
 
+UNShop is an online shop for test data structures, made on Express, MongoDB and Typescript.
 To clone this project, follow the instructions below
 
 ### Instructions
@@ -12,6 +13,9 @@ To clone this project, follow the instructions below
 - Open a terminal inside the folder and run
   > npm install
 - Then, run one of the following commands. Take a look on _package.json_ to see what they actually do
+
   > npm run dev
+
   > npm run build
+
   > npm run start
