@@ -1,22 +1,14 @@
 [
   {
-    "name": "Libro 1",
-    "description": "Esto es un libro",
-    "price": 12
-  },
-  {
-    "name": "Libro 2",
-    "description": "Esto es otro libro",
-    "price": 80
-  },
-  {
-    "name": "Item 3",
-    "description": "hola",
-    "price": 14
-  },
-  {
-    "name": "Item 4",
-    "description": "esto es otro item",
+    "id": "2035f9a8-8991-44c9-a5a2-90bfb2c9e885",
+    "name": "Item 1",
+    "description": "Esto es un item",
     "price": 60.2
+  },
+  {
+    "id": "5ead0d77-eb2e-4c49-8796-2d33c0d5abfe",
+    "name": "Item 4",
+    "description": "Esto es una camisa",
+    "price": 12
   }
 ]
