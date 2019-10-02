@@ -7,6 +7,7 @@ export class App {
 
   constructor() {
     this.app = express();
+    this.app.use(express.urlencoded({ extended: false }));
     this.app.use(express.json());
     this.app.set("port", process.env.PORT || 5000);
     this.port = this.app.get("port");

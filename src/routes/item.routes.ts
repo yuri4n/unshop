@@ -3,14 +3,17 @@ import { Item } from "../item/InterfaceItem";
 import fs from "fs";
 const uuid = require("uuid/v4");
 
+const jsonPath = "./src/files/items.json";
+const generatedJsonPath = "./src/files/generated.json";
+
 const itemRouter = Router();
 
 const formatAndWrite = (items: Item[]): void => {
   const formatItems = JSON.stringify(items, null, 2);
-  fs.writeFileSync("./src/files/items.json", formatItems, "utf-8");
+  fs.writeFileSync(jsonPath, formatItems, "utf-8");
 };
 
-let data: string = fs.readFileSync("./src/files/items.json", "utf-8");
+let data: string = fs.readFileSync(jsonPath, "utf-8");
 let items: Item[] = JSON.parse(data);
 
 itemRouter.route("/api").get((req: Request, res: Response) => {
