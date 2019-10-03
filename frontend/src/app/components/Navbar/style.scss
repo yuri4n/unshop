@@ -1,7 +1,7 @@
 $color-green: #2ecc71;
 
 .navbar {
-  margin: auto 50px;
+  margin: 20px 80px;
   padding: 15px;
   display: flex;
   justify-content: space-between;
@@ -10,39 +10,44 @@ $color-green: #2ecc71;
 
 .logo-box {
   display: flex;
+  align-items: center;
 }
 
 .logo {
+  font-size: 24px;
   margin-left: 20px;
-  font-weight: 700;
+  font-weight: 900;
 }
 
-.menu-button {
-  height: 20px;
-  width: 20px;
-  background-color: $color-green;
+.menu-icon {
+  height: 24px;
+  width: 24px;
+}
+
+.input-div {
+  display: flex;
+  align-items: center;
+  border: 0;
+  border-radius: 100px;
+  background-color: #ecf0f1;
+  height: 35px;
+  width: 600px;
 }
 
 .search-bar {
+  position: relative;
+  margin: auto;
+  color: #2c3e50;
   border: 0;
   border-radius: 100px;
   background-color: #ecf0f1;
   height: 30px;
-  width: 500px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    height: 35px;
-    width: 550px;
-    background-color: #ecf0f1;
-  }
+  width: 550px;
 }
 
-input[type="text"].search-bar::placeholder {
-  position: absolute;
-  right: 30px;
+input[type="search"].search-bar::placeholder {
   font-style: italic;
+  font-weight: 600;
 }
 
 .profile {
@@ -52,12 +57,19 @@ input[type="text"].search-bar::placeholder {
 
 .profile-pic {
   position: relative;
-  height: 30px;
-  width: 30px;
+  height: 32px;
+  width: 32px;
   border-radius: 100px;
 }
 
 .profile-name {
   position: relative;
   right: 12px;
+}
+
+.drop {
+  position: relative;
+  right: 20px;
+  height: 12px;
+  width: 12px;
 }
