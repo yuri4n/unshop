@@ -1,20 +1,50 @@
 .card {
+  position: relative;
   display: flex;
-  overflow-x: auto;
-  //   background-color: #000;
+  overflow-x: scroll;
   min-width: 100%;
   min-height: 200px;
-  margin-left: 80px;
+  left: 80px;
 }
 
 .card--content:first-of-type {
-  background-image: "/public/images/category-books";
   min-width: 280px;
   margin: 20px 20px 20px 0;
 }
 
 .card--content {
-  background-color: #e74c3c;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   min-width: 300px;
   margin: 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  text-align: right;
+}
+
+#books {
+  background-image: url("/images/pics/category-books.jpg");
+}
+#accessories {
+  background-image: url("/images/pics/category-accessories.jpg");
+}
+#clothes {
+  background-image: url("/images/pics/category-clothes.jpg");
+}
+#gadgets {
+  background-image: url("/images/pics/category-gadgets.jpg");
+}
+#another {
+  background-image: url("/images/pics/category-another.jpg");
+}
+
+.card-text {
+  position: relative;
+  top: 60%;
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  right: 10%;
 }
