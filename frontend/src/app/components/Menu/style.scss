@@ -1,0 +1,21 @@
+.menu {
+  top: 0;
+  position: fixed;
+  height: 100vh;
+  width: 30vw;
+  background-color: #fff;
+  z-index: 100;
+}
+
+.menu-logo-box {
+  position: relative;
+  font-size: 26px;
+  font-weight: 700;
+  display: inline-block;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.links-box {
+}
