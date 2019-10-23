@@ -1,5 +1,6 @@
 import express, { Application } from "express";
 import IndexRoutes from "./routes/index.routes";
+import { chownSync } from "fs";
 
 export class App {
   private app: Application;
