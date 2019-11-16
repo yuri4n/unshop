@@ -8,6 +8,12 @@ class LinkedStack<T> {
     this.top = newNode;
   }
 
+  popData(): StackNode<T> | null {
+    let deleted = this.top;
+    this.top = this.top!.bellow;
+    return deleted;
+  }
+
   printStack(): void {
     let current: StackNode<T> | null = this.top;
     while (current != null) {

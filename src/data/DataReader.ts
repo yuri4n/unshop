@@ -30,6 +30,11 @@ class DataReader {
   pushData(data: Item): void {
     this.stack.pushData(data);
   }
+
+  popData(): Item {
+    let deleted = this.stack.popData().data;
+    return deleted;
+  }
 }
 
 export default DataReader;

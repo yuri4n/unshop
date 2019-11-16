@@ -1,15 +1,36 @@
 import * as React from "react";
 import "./styles.scss";
 
+interface Item {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+}
+
 export interface Props {}
 
-export interface State {}
+export interface State {
+  items: Item[] | null;
+}
 
 class Trending extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {};
+    this.state = {
+      items: null
+    };
   }
+
+  componentDidMount() {
+    fetch("/api/trending")
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ items: data });
+      })
+      .catch(console.log);
+  }
+
   render() {
     return (
       <div>

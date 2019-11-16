@@ -38,4 +38,12 @@ itemRouter.get("/api/items/delete/:id", (req: Request, res: Response) => {
   res.send("eliminado");
 });
 
+itemRouter.get("/api/trending", (req: Request, res: Response) => {
+  let response: Item[];
+  for (let i = 0; i < 5; i++) {
+    response.push(dr.popData());
+  }
+  res.send(response);
+});
+
 export { itemRouter };
