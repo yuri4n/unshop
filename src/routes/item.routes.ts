@@ -39,11 +39,13 @@ itemRouter.get("/api/items/delete/:id", (req: Request, res: Response) => {
 });
 
 itemRouter.get("/api/trending", (req: Request, res: Response) => {
-  let response: Item[];
-  for (let i = 0; i < 5; i++) {
-    response.push(dr.popData());
+  let response: Item[] = [];
+  let i = 0;
+  while (dr.popData() && i < 5) {
+    response.push(dr.popData()!);
+    i++;
   }
-  res.send(response);
+  res.json(response);
 });
 
 export { itemRouter };

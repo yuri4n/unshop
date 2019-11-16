@@ -9,9 +9,17 @@ class LinkedStack<T> {
   }
 
   popData(): StackNode<T> | null {
-    let deleted = this.top;
-    this.top = this.top!.bellow;
-    return deleted;
+    if (!this.top) {
+      return null;
+    } else {
+      let deleted = this.top;
+      if (this.top.bellow) {
+        this.top = this.top.bellow;
+      } else {
+        this.top = null;
+      }
+      return deleted;
+    }
   }
 
   printStack(): void {

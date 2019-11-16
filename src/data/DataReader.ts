@@ -31,8 +31,12 @@ class DataReader {
     this.stack.pushData(data);
   }
 
-  popData(): Item {
-    let deleted = this.stack.popData().data;
+  popData(): Item | null {
+    let deleted: Item | null = null;
+    let node = this.stack.popData();
+    if (node) {
+      deleted = this.stack.popData()!.data;
+    }
     return deleted;
   }
 }
