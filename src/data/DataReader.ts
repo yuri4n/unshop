@@ -14,7 +14,7 @@ class DataReader {
   }
 
   readData(): void {
-    let data: string = fs.readFileSync(this.jsonPath, "utf-8");
+    let data: string = fs.readFileSync(this.generatedJsonPath, "utf-8");
     this.items = JSON.parse(data);
 
     for (let item of this.items) {

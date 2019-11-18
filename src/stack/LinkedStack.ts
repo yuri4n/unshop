@@ -25,7 +25,6 @@ class LinkedStack<T> {
   printStack(): void {
     let current: StackNode<T> | null = this.top;
     while (current != null) {
-      console.log(current.data);
       current = current.bellow;
     }
   }
@@ -43,8 +42,6 @@ class LinkedStack<T> {
 
       current = current.bellow;
     }
-
-    console.log(data);
     return data;
   }
 }

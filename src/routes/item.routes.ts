@@ -6,11 +6,6 @@ const uuid = require("uuid/v4");
 const dr: DataReader = new DataReader();
 const itemRouter = Router();
 
-// const formatAndWrite = (items: Item[]): void => {
-//   const formatItems = JSON.stringify(items, null, 2);
-//   fs.writeFileSync(generatedJsonPath, formatItems, "utf-8");
-// };
-
 let items: Item[] = JSON.parse(dr.stackToJSON());
 
 itemRouter.route("/api").get((req: Request, res: Response) => {
@@ -41,8 +36,10 @@ itemRouter.get("/api/items/delete/:id", (req: Request, res: Response) => {
 itemRouter.get("/api/trending", (req: Request, res: Response) => {
   let response: Item[] = [];
   let i = 0;
-  while (dr.popData() && i < 5) {
-    response.push(dr.popData()!);
+  let data = dr.popData();
+  while (data && i < 9) {
+    response.push(data);
+    data = dr.popData();
     i++;
   }
   res.json(response);
