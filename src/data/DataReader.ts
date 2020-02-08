@@ -1,4 +1,4 @@
-import { Item } from "../item/InterfaceItem";
+import { Item } from "../interfaces/InterfaceItem";
 import fs from "fs";
 import LinkedStack from "../stack/LinkedStack";
 

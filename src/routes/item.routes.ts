@@ -1,5 +1,5 @@
 import { Router, Response, Request } from "express";
-import { Item } from "../item/InterfaceItem";
+import { Item } from "../interfaces/InterfaceItem";
 import DataReader from "../data/DataReader";
 const uuid = require("uuid/v4");
 

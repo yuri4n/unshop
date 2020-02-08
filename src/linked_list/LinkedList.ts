@@ -1,13 +1,15 @@
 import LinkedListNode from "./LinkedListNode";
 
-class LinkedList<T>{
+class LinkedList<T> {
     public tail: LinkedListNode<T> | null;
     public head: LinkedListNode<T> | null;
 
-    constructor(){}
+    constructor() {
+        this.tail = null;
+        this.head = null;
+    }
 
-    public pushFront(key: T): void{
-
+    public pushFront(key: T): void {
         let node2 = new LinkedListNode(key, null, null);
 
         if (this.head == null) {
@@ -25,7 +27,7 @@ class LinkedList<T>{
         }
     }
 
-    public pushBack(key: T): void{
+    public pushBack(key: T): void {
         let node2 = new LinkedListNode(key, null, null);
         node2.next = null;
         node2.prev = this.tail;
@@ -40,7 +42,7 @@ class LinkedList<T>{
         }
     }
 
-    public searchValue(value: T): LinkedListNode<T> | null{
+    public searchValue(value: T): LinkedListNode<T> | null {
         let pointer = this.head;
         if (this.head!.data == value) {
             return this.head;
@@ -51,27 +53,26 @@ class LinkedList<T>{
         if (pointer == this.tail && pointer!.data == value) {
             return this.tail;
         } else if (pointer == this.tail && pointer!.data != value) {
-           console.log('Error: El elemento no existe en la lista');
+            console.log("Error: El elemento no existe en la lista");
             return null;
         } else {
             return pointer;
         }
     }
 
-    public pop(key: T): T | null{
+    public pop(key: T): T | null {
         if (this.head == null) return null;
-    
-        if (this.head.data == key){
+
+        if (this.head.data == key) {
             let buffNode = this.head;
 
             this.head = this.head.next;
             return buffNode.data;
-        }
-        else{
+        } else {
             let prev: LinkedListNode<T> | null = this.head;
             let buffNode = this.head.next;
-            
-            while(buffNode != this.tail && buffNode!.data != key){
+
+            while (buffNode != this.tail && buffNode!.data != key) {
                 prev = prev!.next;
                 buffNode = prev!.next;
             }
@@ -79,3 +80,5 @@ class LinkedList<T>{
         }
     }
 }
+
+export { LinkedList };
