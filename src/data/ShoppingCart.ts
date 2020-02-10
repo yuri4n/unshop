@@ -39,7 +39,7 @@ class ShoppingCart {
             list: current
         }
 
-        return this.hc.insert(order);
+        return this.hc.getOrders();
     }
 
     public insertItems(id: string[]) {

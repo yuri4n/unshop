@@ -22,6 +22,8 @@ class HashmapCreator {
 		}
 	}
 
+	public getOrders() { return this.orders; }
+
 	public insert(order: Order): number {
 		let hashCode = this.hashMap.insert(order);
 
