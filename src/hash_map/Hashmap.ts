@@ -12,9 +12,9 @@ class Hashmap {
 		this.items = new Array<LinkedList<Order>>(this.size);
 	}
 
-	private hash(order: Order): number {
-		let day: String = order.date.getDate().toString();
-		let hour: String = order.date.getHours().toString();
+	private hash(date: Date): number {
+		let day: String = date.getDate().toString();
+		let hour: String = date.getHours().toString();
 
 		let hashCode = Number("" + day + hour);
 
@@ -22,8 +22,20 @@ class Hashmap {
 	}
 
 	public insert(order: Order) {
-		let hashCode: number = this.hash(order);
+		let hashCode: number = this.hash(order.date);
 
+		order.hashCode = hashCode;
 		this.items[hashCode].pushBack(order);
+
+		return hashCode;
+	}
+
+	public find(date: Date): LinkedList<Order> {
+		let hashCode: number = this.hash(date);
+		let order = this.items[hashCode];
+
+		return order;
 	}
 }
+
+export { Hashmap }

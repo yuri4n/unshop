@@ -3,13 +3,13 @@ import { Item } from "../interfaces/InterfaceItem";
 // BinaryMaxHeap que organiza por precio los items que recibe
 
 class BinaryMaxHeap {
-    public items: (Item | number)[];
+    public items: Item[];
     public size: number;
     public capacity: number;
 
 
     constructor() {
-        this.items = [0];
+        this.items = [{ id: "0", name: "", description: "", price: 0 }];
         this.size = 0;
         this.capacity = 1;
     }
@@ -40,7 +40,7 @@ class BinaryMaxHeap {
         for (let a = 1; a <= this.size; a++) {
             if (this.items[a].id == id) return a;
         }
-        throw "Object doesn't exist" ;
+        throw "Object doesn't exist";
     }
 
     public seekAndDestroy(id: string) {
