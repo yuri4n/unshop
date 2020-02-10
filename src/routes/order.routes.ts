@@ -1,28 +1,17 @@
 import { Router, Response, Request } from "express";
 import { Order } from "../interfaces/InterfaceOrder";
-import HashmapCreator from "../data/HashmapCreator";
+import ShoppingCart from "../data/ShoppingCart";
 
 const orderRouter = Router();
-const hc = new HashmapCreator();
+const shoppingCart: ShoppingCart = new ShoppingCart();
 
 orderRouter.route("/api/orders")
 	.get((req: Request, res: Response) => {
-		res.json();
+		res.json(shoppingCart.heapToArray());
 	})
 	.post((req: Request, res: Response) => {
-		let date: Date = new Date();
-		let { price, list } = req.body;
-
-		let order: Order = {
-			hashCode: 0,
-			date,
-			price,
-			list
-		}
-
-		let hasCode = hc.insert(order);
-
-		res.json(hasCode);
+		let list = req.body.list;
+		shoppingCart.insertItems(list);
 	});
 
 export { orderRouter }

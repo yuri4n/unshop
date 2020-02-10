@@ -22,9 +22,14 @@ class ShoppingCart {
         this.totalPrice -= tmp.price;
     }
 
-    public generateOrder() {
+    public heapToArray() {
         let current: Item[] = new Array(this.heap.size);
         while (this.heap.size > 0) current.push(this.heap.extractMax());
+        return current;
+    }
+
+    public generateOrder() {
+        let current = this.heapToArray();
         let date: Date = new Date();
         
         let order: Order = {
@@ -34,7 +39,7 @@ class ShoppingCart {
             list: current
         }
 
-        let hasCode = this.hc.insert(order);
+        return this.hc.insert(order);
     }
 
     public insertItems(id: string[]) {
@@ -52,3 +57,5 @@ class ShoppingCart {
     }
 
 }
+
+export default ShoppingCart;
