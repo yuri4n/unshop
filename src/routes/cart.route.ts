@@ -1,17 +1,16 @@
 import { Router, Response, Request } from "express";
-import { Order } from "../interfaces/InterfaceOrder";
 import ShoppingCart from "../data/ShoppingCart";
 
-const orderRouter = Router();
+const cartRouter = Router();
 const shoppingCart: ShoppingCart = new ShoppingCart();
 
-orderRouter.route("/api/orders")
+cartRouter.route("/api/cart")
 	.get((req: Request, res: Response) => {
-		res.json(shoppingCart.generateOrder());
+		res.json(shoppingCart.heapToArray());
 	})
 	.post((req: Request, res: Response) => {
 		let list = req.body.list;
 		shoppingCart.insertItems(list);
 	});
 
-export { orderRouter }
+export default cartRouter;
