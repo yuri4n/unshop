@@ -45,10 +45,14 @@ class BinaryMaxHeap {
 
     public seekAndDestroy(id: string) {
         let index = this.search(id);
-        if (index == 1) this.extractMax();
+        let item;
+        if (index == 1) item = this.extractMax();
         else {
+            item = this.items[index];
             this.items[index] = this.items[this.size];
         }
+        this.size--;
+        return item;
     }
 
     public add(item: Item) {
@@ -80,6 +84,7 @@ class BinaryMaxHeap {
         this.items[1] = this.items[this.size];
         this.size--;
         this.heapifyDown();
+        return tmp;
     }
 
     public swap(index1: number, index2: number) {
@@ -99,3 +104,5 @@ class BinaryMaxHeap {
     public hasRight(parent: number) { return this.right(parent) < this.size; }
     public hasParent(child: number) { return this.parent(child) > 0 }
 }
+
+export default BinaryMaxHeap;
