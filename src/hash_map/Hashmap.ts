@@ -13,8 +13,9 @@ class Hashmap {
 	}
 
 	private hash(date: Date): number {
-		let day: String = date.getDate().toString();
-		let hour: String = date.getHours().toString();
+		let fecha = new Date();
+		let day: number = fecha.getDate();
+		let hour: number = fecha.getHours();
 
 		let hashCode = Number("" + day + hour);
 

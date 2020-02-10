@@ -1,6 +1,5 @@
 import * as React from "react";
 import "./styles.scss";
-import { EPERM } from "constants";
 
 interface Item {
     id: string;
@@ -24,17 +23,12 @@ class Trending extends React.Component<Props, State> {
     }
 
     componentDidMount() {
-        fetch("/api/trending")
+        fetch("/api/cart")
             .then(res => res.json())
             .then(data => {
                 this.setState({ items: data });
             })
             .catch(console.log);
-    }
-
-    addListener = (e: React.FormEvent<HTMLInputElement>): void => {
-        e.preventDefault();
-        
     }
 
     render() {
@@ -43,10 +37,10 @@ class Trending extends React.Component<Props, State> {
                 <div className="trend-title-box">
                     <img
                         className="trend-icon"
-                        src="./images/icons/trending.svg"
+                        src="./images/icons/cart.svg"
                         alt=""
                     />
-                    <span className="trend-title">Tendencias</span>
+                    <span className="trend-title">Cart</span>
                 </div>
                 <div className="items-container">
                     {this.state.items!.map(item => (
@@ -64,8 +58,6 @@ class Trending extends React.Component<Props, State> {
                                 <span className="title">{item.name}</span>
                                 <br />
                                 <span className="autor">Jaime Arocha</span>
-                                <label htmlFor="add">Añadir al carrito</label>
-                                <input onChange={this.addListener} type="checkbox" name="add" id="add"/>
                                 <div className="btn">
                                     <span className="btn-text">Ver más</span>
                                 </div>

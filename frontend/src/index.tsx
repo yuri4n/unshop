@@ -5,6 +5,7 @@ import "./sass/main.scss";
 
 import Landing from "./app/landing/Landing";
 import Admin from "./app/admin/Admin";
+import Cart from "./app/cart/Cart";
 
 import { Route, BrowserRouter as Router } from "react-router-dom";
 
@@ -13,6 +14,7 @@ const routing = (
     <div>
       <Route exact path="/" component={Landing} />
       <Route path="/admin" component={Admin} />
+      <Route path="/cart" component={Cart} />
     </div>
   </Router>
 );
