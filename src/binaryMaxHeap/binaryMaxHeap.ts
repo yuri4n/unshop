@@ -34,7 +34,21 @@ class BinaryMaxHeap {
             this.swap(this.parent(index), index);
             index = this.parent(index);
         }
+    }
 
+    public search(id: string) {
+        for (let a = 1; a <= this.size; a++) {
+            if (this.items[a].id == id) return a;
+        }
+        throw "Object doesn't exist" ;
+    }
+
+    public seekAndDestroy(id: string) {
+        let index = this.search(id);
+        if (index == 1) this.extractMax();
+        else {
+            this.items[index] = this.items[this.size];
+        }
     }
 
     public add(item: Item) {
@@ -53,11 +67,15 @@ class BinaryMaxHeap {
         }
     }
 
+    public printHeap() {
+        for (let a = 0; a <= this.size; a++) console.log(this.items[a] + " ");
+    }
+
     public peek() {
         return this.items[1];
     }
 
-    public poll() {
+    public extractMax() {
         let tmp = this.items[1];
         this.items[1] = this.items[this.size];
         this.size--;
